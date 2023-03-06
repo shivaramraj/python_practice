@@ -1,0 +1,167 @@
+
+
+1. comprehensions in python are used for creating new sequences 
+    from iterables/another sequence
+2.comprehensions are single-line statements
+3. Based on expression if u want to define sequences then we go for
+    comprehensions
+
+
+Classification of Comprehensions:
+------------------------------------------
+In python we have 3 types of Comprehensions 
+
+1. List Comprehension
+2. set Comprehension
+3. Dictionary Comprehension
+
+
+# List comprehension syntax with ONe Value and one for loop
+
+#varname= [value forLoop]
+
+#example
+#adding the numbers into list by using normal Approach
+L=[]
+for i in range(1,11):
+    L.append(i)
+print(L)
+
+
+#adding the numbers into list by using List Comrehension Approach
+L=[j for j in range(1,11)]
+
+#adding the squares of numbers into list by using List Comrehension Approach
+L=[j**2 for j in range(1,11)]
+
+
+# List comprehension syntax with ONe Value and one for loop and one if condition
+
+#varname= [value forLoop if condition]
+
+#example
+#adding the even numbers into list by using normal Approach
+L=[]
+for i in range(1,11):
+    if i%2==0:
+        L.append(i)
+print(L)
+
+#adding the even numbers into list by using List Comrehension Approach
+L=[j for j in range(1,11) if j%2==0]
+
+# from the given tuple add only odd numbers  into the list
+T=(11,78,34,99,23,67,90,70)
+L=[i for i in T if i%2==1]
+print(L)
+
+
+# List comprehension syntax with ONe Value and one for loop and multiple if condition
+
+#varname= [value forLoop if condition1 and/or condition2]
+
+
+# from the given tuple add only odd numbers which r greater than 50 into the list
+T=(11,78,34,99,23,67,90,70)
+L=[i for i in T if i%2==1 and i>50]
+print(L)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+'''l=[]
+for i in range(1,11):
+    
+    l.append(i**3)
+
+print(l)
+
+#list comprehension
+#with one for loop
+#varname=[value for loop]
+'''
+'''
+l=[i for i in range(10)]
+print(l)
+'''
+'''
+#value,for loop
+l1=[value**3 for value in range(1,11)]
+print(l1)
+'''
+#create a list which will be having even numbers from 1 to 10
+'''l=[]
+for i in range(1,11):
+    if i%2==0:
+        l.append(i)
+print(l)
+'''
+# value,for loop,if condition
+#[value for loop if condition]
+'''
+L2=[even for even in range(1,11) if even%2!=0]
+print(L2)
+
+'''
+'''
+#[i,j,k]=[1,1,1],[2,2,2]
+l=[]
+for i in range(1,10):
+    for j in range(1,10):
+        for k in range(1,10):
+            if i==j==k:
+                l.append([i,j,k])
+print(l)
+#value,multiple for loops and if condtion
+#syntax:[values for loop1 for loop2 ....for loopn if condition]
+data=[[i,j,k] for i in range(1,10) for j in range(1,10) for k in range(1,10) if i==j==k]
+print(data)
+'''
+'''
+l=[1,2,3,-9,-100,99]
+#l1=[1,2,3,0,0,99]
+l1=[]
+for i in l:
+    if i>0:
+        l1.append(i)
+    else:
+        l1.append(0)
+
+print(l1)
+#value for loop if condition else
+#varname=[value if condition else for loop]
+data=[i if i>0 else 0 for i in [1,2,3,-88,100,-99]]
+print(data)
+'''
+l=[1,2,3,-99,55,66,-100,5]
+#if it is non-negative and more than 5
+#l1=[55,66]
+#value for loop and we r having multiple if conditions
+#[value for loop if condition1 if condtion2]
+'''
+l1=[]
+for i in l:
+    if i>0 and i>5:
+        l1.append(i)
+
+print(l1)
+data=[i for i in [1,2,3,-99,55,66,-100,5] if i>0 if i>5]
+print(data)
+'''

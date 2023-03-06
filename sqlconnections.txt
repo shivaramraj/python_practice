@@ -1,0 +1,58 @@
+def connectionobject():
+    import sqlite3
+    connobj=sqlite3.connect('harshad.db')
+    return connobj
+
+connobj=connectionobject()
+
+
+def create_table(connobj):
+    curobj=connobj.cursor()
+    curobj.execute('create table emp(id integer primary key,name text)')
+    connobj.commit()
+    print('table is created successfully')
+
+
+#create_table(connobj)
+
+def insert_data(connobj):
+    curobj=connobj.cursor()
+    curobj.execute('insert into emp values(4,"pullamma")')
+    connobj.commit()
+    print('data is inserted successfully')
+
+#insert_data(connobj)
+
+
+
+def retrieve_data(connobj):
+    curobj=connobj.cursor()
+    Queryobj=curobj.execute('select * from emp')
+    for i in Queryobj:
+        print(i)
+
+
+retrieve_data(connobj)
+
+def update_data(connobj):
+    curobj=connobj.cursor()
+    curobj.execute('update emp set name="pentamma" where id=4')
+    connobj.commit()
+    print('updated successfully')
+
+
+#update_data(connobj)
+#retrieve_data(connobj)
+
+def delete_data(connobj):
+    curobj=connobj.cursor()
+    curobj.execute('delete from emp where id=3')
+    connobj.commit()
+    print('row is deleted successfully')
+    
+delete_data(connobj)
+
+retrieve_data(connobj)
+
+
+
